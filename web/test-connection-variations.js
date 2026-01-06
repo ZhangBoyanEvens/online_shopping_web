@@ -13,16 +13,16 @@ const DB_NAME = process.env.DB_NAME || 'myDB';
 // 推荐：使用环境变量 MONGODB_URL 设置实际的连接字符串
 const testConfigs = [
     {
-        name: '格式 1: YOUR_USERNAME@admin (完整格式)',
-        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://YOUR_USERNAME%40admin:YOUR_PASSWORD@your-cluster.mongodb.net/' + DB_NAME + '?ssl=true&authSource=admin')
+        name: '格式 1: example@admin (完整格式)',
+        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://example%40admin:example@example.mongodb.net/' + DB_NAME + '?ssl=true&authSource=admin')
     },
     {
-        name: '格式 2: YOUR_USERNAME (仅用户名，authSource=admin)',
-        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://YOUR_USERNAME:YOUR_PASSWORD@your-cluster.mongodb.net/' + DB_NAME + '?ssl=true&authSource=admin')
+        name: '格式 2: example (仅用户名，authSource=admin)',
+        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://example:example@example.mongodb.net/' + DB_NAME + '?ssl=true&authSource=admin')
     },
     {
-        name: '格式 3: YOUR_USERNAME (仅用户名，authSource=myDB)',
-        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://YOUR_USERNAME:YOUR_PASSWORD@your-cluster.mongodb.net/' + DB_NAME + '?ssl=true&authSource=' + DB_NAME)
+        name: '格式 3: example (仅用户名，authSource=myDB)',
+        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://example:example@example.mongodb.net/' + DB_NAME + '?ssl=true&authSource=' + DB_NAME)
     }
 ];
 

@@ -110,7 +110,7 @@ The application is configured to connect to MongoDB Atlas with:
    
    Edit `mongodb-migration.js` and `server.js` with your MongoDB connection string:
    ```javascript
-   const MONGODB_URL = 'mongodb://username:password@your-cluster.mongodb.net/database';
+   const MONGODB_URL = 'mongodb://example:example@example.mongodb.net/database';
    ```
 
 4. **Start the application**

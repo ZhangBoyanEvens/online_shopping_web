@@ -7,8 +7,8 @@ const mongoose = require('mongoose');
 
 // MongoDB 连接配置
 // TODO: 替换为你的 MongoDB 连接字符串
-// 格式: mongodb://YOUR_USERNAME:YOUR_PASSWORD@host:port/database
-// 或 MongoDB Atlas: mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@cluster.mongodb.net/database
+// 格式: mongodb://example:example@host:port/database
+// 或 MongoDB Atlas: mongodb+srv://example:example@example.mongodb.net/database
 // 注意：用户名中的 @ 符号需要编码为 %40
 // 推荐：使用环境变量 MONGODB_URL 而不是硬编码
 const MONGODB_URL = process.env.MONGODB_URL || 'YOUR_MONGODB_CONNECTION_URL_HERE';

@@ -13,7 +13,7 @@
 
 2. **Example `.env` file:**
    ```env
-   MONGODB_URL=mongodb://YOUR_USERNAME:YOUR_PASSWORD@your-cluster.mongodb.net/database?ssl=true&authSource=admin
+   MONGODB_URL=mongodb://example:example@example.mongodb.net/database?ssl=true&authSource=admin
    DB_NAME=spmart
    PORT=3000
    ```

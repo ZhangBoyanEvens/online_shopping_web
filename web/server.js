@@ -25,8 +25,8 @@ app.use(express.json());
 // ============================================
 // 从环境变量读取 MongoDB URL，如果没有则使用默认值
 // TODO: 创建 .env 文件并设置 MONGODB_URL
-// 格式: mongodb://YOUR_USERNAME:YOUR_PASSWORD@host:port/database
-// 或 MongoDB Atlas: mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@cluster.mongodb.net/database
+// 格式: mongodb://example:example@host:port/database
+// 或 MongoDB Atlas: mongodb+srv://example:example@example.mongodb.net/database
 // 注意：用户名中的 @ 符号需要编码为 %40
 // 推荐：使用环境变量，不要硬编码凭据
 const MONGODB_URL = process.env.MONGODB_URL || 'YOUR_MONGODB_CONNECTION_URL_HERE';

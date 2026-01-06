@@ -35,7 +35,7 @@ const MONGODB_URL = 'mongodb://localhost:27017/spmart';
 
 **MongoDB Atlas (云数据库):**
 ```javascript
-const MONGODB_URL = 'mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@cluster.mongodb.net/spmart';
+const MONGODB_URL = 'mongodb+srv://example:example@example.mongodb.net/spmart';
 ```
 
 ### 3. 从浏览器获取数据

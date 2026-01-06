@@ -63,7 +63,7 @@ npm install express mongoose cors dotenv
 创建 `.env` 文件：
 
 ```env
-MONGODB_URL=你的MongoDB连接字符串
+MONGODB_URL=mongodb://example:example@example.mongodb.net/database?ssl=true&authSource=admin
 DB_NAME=spmart
 PORT=3000
 ```
