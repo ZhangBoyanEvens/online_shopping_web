@@ -80,8 +80,7 @@ async function testConnection() {
             console.error('  - 点击 "Add IP Address"');
             console.error('  - 选择 "Allow Access from Anywhere" (0.0.0.0/0) 或添加你的 IP');
             console.error('\n步骤 2: 验证用户名和密码');
-            console.error('  - 用户名: Zhangboyan@admin');
-            console.error('  - 密码: Zhangboyan');
+            console.error('  - 检查你的 MongoDB Atlas 用户名和密码');
             console.error('  - 确认在 Database Access 中用户存在且密码正确');
             console.error('\n步骤 3: 检查数据库用户权限');
             console.error('  - 确保用户有读写权限');
