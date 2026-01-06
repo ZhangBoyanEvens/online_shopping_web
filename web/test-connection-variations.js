@@ -9,18 +9,20 @@ const mongoose = require('mongoose');
 const MONGODB_BASE_URL = process.env.MONGODB_URL || 'YOUR_MONGODB_CONNECTION_URL_HERE';
 const DB_NAME = process.env.DB_NAME || 'myDB';
 
+// 注意：这些是示例格式，需要替换为实际的连接字符串
+// 推荐：使用环境变量 MONGODB_URL 设置实际的连接字符串
 const testConfigs = [
     {
-        name: '格式 1: username@admin (完整格式)',
-        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://username%40admin:password@your-cluster.mongodb.net/' + DB_NAME + '?ssl=true&authSource=admin')
+        name: '格式 1: YOUR_USERNAME@admin (完整格式)',
+        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://YOUR_USERNAME%40admin:YOUR_PASSWORD@your-cluster.mongodb.net/' + DB_NAME + '?ssl=true&authSource=admin')
     },
     {
-        name: '格式 2: username (仅用户名，authSource=admin)',
-        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://username:password@your-cluster.mongodb.net/' + DB_NAME + '?ssl=true&authSource=admin')
+        name: '格式 2: YOUR_USERNAME (仅用户名，authSource=admin)',
+        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://YOUR_USERNAME:YOUR_PASSWORD@your-cluster.mongodb.net/' + DB_NAME + '?ssl=true&authSource=admin')
     },
     {
-        name: '格式 3: username (仅用户名，authSource=myDB)',
-        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://username:password@your-cluster.mongodb.net/' + DB_NAME + '?ssl=true&authSource=' + DB_NAME)
+        name: '格式 3: YOUR_USERNAME (仅用户名，authSource=myDB)',
+        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://YOUR_USERNAME:YOUR_PASSWORD@your-cluster.mongodb.net/' + DB_NAME + '?ssl=true&authSource=' + DB_NAME)
     }
 ];
 

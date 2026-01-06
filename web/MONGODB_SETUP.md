@@ -4,8 +4,10 @@
 
 配置 MongoDB 连接字符串：
 ```
-mongodb://username:password@your-cluster.mongodb.net/database?ssl=true&authSource=admin
+mongodb://YOUR_USERNAME:YOUR_PASSWORD@your-cluster.mongodb.net/database?ssl=true&authSource=admin
 ```
+
+**注意**: 将 `YOUR_USERNAME` 和 `YOUR_PASSWORD` 替换为你的实际 MongoDB 凭据。
 
 ## ⚠️ 重要提示
 
@@ -15,7 +17,7 @@ mongodb://username:password@your-cluster.mongodb.net/database?ssl=true&authSourc
 
 **标准格式：**
 ```
-mongodb://username:password@your-cluster.mongodb.net/database?ssl=true&authSource=admin
+mongodb://YOUR_USERNAME:YOUR_PASSWORD@your-cluster.mongodb.net/database?ssl=true&authSource=admin
 ```
 
 **如何获取用户名和密码：**
@@ -44,13 +46,13 @@ const DB_NAME = 'spmart';
 #### 方式 1：直接修改代码（迁移脚本）
 编辑 `mongodb-migration.js`：
 ```javascript
-const MONGODB_URL = 'mongodb://username:password@your-cluster.mongodb.net/database?ssl=true&authSource=admin';
+const MONGODB_URL = 'mongodb://YOUR_USERNAME:YOUR_PASSWORD@your-cluster.mongodb.net/database?ssl=true&authSource=admin';
 ```
 
 #### 方式 2：使用环境变量（API 服务器，推荐）
 创建 `.env` 文件：
 ```env
-MONGODB_URL=mongodb://username:password@your-cluster.mongodb.net/database?ssl=true&authSource=admin
+MONGODB_URL=mongodb://YOUR_USERNAME:YOUR_PASSWORD@your-cluster.mongodb.net/database?ssl=true&authSource=admin
 DB_NAME=spmart
 ```
 
@@ -74,7 +76,7 @@ node server.js
 
 ### 错误 1：Authentication failed
 **原因：** 缺少用户名和密码
-**解决：** 在 URL 中添加 `username:password@`
+**解决：** 在 URL 中添加 `YOUR_USERNAME:YOUR_PASSWORD@`
 
 ### 错误 2：Network timeout
 **原因：** IP 地址未添加到白名单
