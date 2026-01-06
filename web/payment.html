@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpMart - Payment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2><a href="shop.html" style="text-decoration: none; color: inherit;">SpMart</a></h2>
+            </div>
+            <div class="nav-links">
+                <a href="shop.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link" onclick="showAboutUs(); return false;">About Us</a>
+                <a href="#" class="nav-link" onclick="showContactUs(); return false;">Contact Us</a>
+                <a href="#" class="nav-link" onclick="showHelp(); return false;">Help</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container payment-container">
+        <div class="payment-layout">
+            <div class="payment-form-section">
+                <div class="page-header">
+                    <h1>Payment</h1>
+                    <p>Select your payment method</p>
+                </div>
+
+                <div class="payment-method-selection">
+                    <label class="payment-method-option">
+                        <input type="radio" name="paymentMethod" value="card" checked onchange="updatePaymentMethod()">
+                        <div class="method-card">
+                            <div class="method-icon">💳</div>
+                            <h3>Credit Card</h3>
+                            <p>Pay with your credit or debit card</p>
+                        </div>
+                    </label>
+                    <label class="payment-method-option">
+                        <input type="radio" name="paymentMethod" value="cash" onchange="updatePaymentMethod()">
+                        <div class="method-card">
+                            <div class="method-icon">💵</div>
+                            <h3>Cash</h3>
+                            <p>Pay with cash on delivery or pickup</p>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- Credit Card Form -->
+                <form id="cardPaymentForm" class="payment-form" onsubmit="handlePayment(event)" style="display: block;">
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" required placeholder="1234 5678 9012 3456" 
+                               maxlength="19" oninput="formatCardNumber(this)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cardName">Cardholder Name</label>
+                        <input type="text" id="cardName" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="text" id="expiryDate" required placeholder="MM/YY" 
+                                   maxlength="5" oninput="formatExpiryDate(this)">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" required placeholder="123" 
+                                   maxlength="4" pattern="[0-9]{3,4}">
+                        </div>
+                    </div>
+
+                    <div class="order-summary-mini">
+                        <div class="summary-row">
+                            <span>Total Amount:</span>
+                            <span id="paymentTotal">$0.00</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Complete Payment
+                    </button>
+                </form>
+
+                <!-- Cash Payment Form -->
+                <form id="cashPaymentForm" class="payment-form" onsubmit="handleCashPayment(event)" style="display: none;">
+                    <div class="cash-payment-info">
+                        <div class="info-icon">💵</div>
+                        <h3>Cash Payment</h3>
+                        <p>You will pay with cash when you receive your order.</p>
+                        <div class="cash-instructions">
+                            <div class="instruction-item">
+                                <strong>For Pickup Orders:</strong>
+                                <p>Please bring exact change or cash to the store when collecting your order.</p>
+                            </div>
+                            <div class="instruction-item">
+                                <strong>For Delivery Orders:</strong>
+                                <p>Please prepare exact change or cash for the delivery person.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-summary-mini">
+                        <div class="summary-row">
+                            <span>Total Amount:</span>
+                            <span id="cashPaymentTotal">$0.00</span>
+                        </div>
+                        <div class="summary-row" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border-color);">
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">Please prepare exact change</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Confirm Cash Payment
+                    </button>
+                </form>
+            </div>
+
+            <div class="payment-security">
+                <div class="security-badge">
+                    <span class="lock-icon">🔒</span>
+                    <h3>Secure Payment</h3>
+                    <p>Your payment information is encrypted and secure</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="animations.js"></script>
+    <script src="modals.js"></script>
+    <script src="payment.js"></script>
+</body>
+</html>

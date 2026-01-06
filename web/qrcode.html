@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpMart - Order QR Code</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2><a href="shop.html" style="text-decoration: none; color: inherit;">SpMart</a></h2>
+            </div>
+            <div class="nav-links">
+                <a href="shop.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link" onclick="showAboutUs(); return false;">About Us</a>
+                <a href="#" class="nav-link" onclick="showContactUs(); return false;">Contact Us</a>
+                <a href="#" class="nav-link" onclick="showHelp(); return false;">Help</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container qrcode-container">
+        <div class="success-message">
+            <div class="success-icon">✓</div>
+            <h1>Order Confirmed!</h1>
+            <p>Your order has been successfully placed</p>
+        </div>
+
+        <div class="qrcode-section">
+            <h2>Pickup QR Code</h2>
+            <p class="instruction-text">Please show this QR code to the store staff to collect your order</p>
+            
+            <div class="qrcode-wrapper">
+                <canvas id="qrcodeCanvas"></canvas>
+            </div>
+
+            <div class="order-details">
+                <div class="detail-row">
+                    <span>Order Number:</span>
+                    <span id="orderNumber">-</span>
+                </div>
+                <div class="detail-row">
+                    <span>Pickup Location:</span>
+                    <span>SpMart Store #123</span>
+                </div>
+                <div class="detail-row">
+                    <span>Total Amount:</span>
+                    <span id="orderTotal">$0.00</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="printQRCode()">Print QR Code</button>
+                <a href="shop.html" class="btn btn-secondary">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="app.js"></script>
+    <script src="animations.js"></script>
+    <script src="modals.js"></script>
+    <script src="qrcode.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "spmart-mongodb-migration",
+  "version": "1.0.0",
+  "description": "MongoDB data migration script for SpMart e-commerce",
+  "main": "mongodb-migration.js",
+  "scripts": {
+    "migrate": "node mongodb-migration.js",
+    "server": "node server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongodb",
+    "migration",
+    "e-commerce"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^8.0.0",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  }
+}
+
