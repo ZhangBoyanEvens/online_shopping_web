@@ -31,6 +31,12 @@ desktop.ini
 # mongodb-migration.js (keep the file, but user should update URL)
 # server.js (keep the file, but user should update URL)
 
+# Environment files with sensitive data
+.env
+.env.local
+.env.*.local
+*.env
+
 # Build outputs
 dist/
 build/

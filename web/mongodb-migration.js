@@ -14,12 +14,14 @@ const mongoose = require('mongoose');
 // MongoDB 连接配置
 // ============================================
 // MongoDB 连接 URL
-// 注意：用户名中的 @ 符号已编码为 %40
-const MONGODB_URL = 'mongodb://Zhangboyan%40admin:Zhangboyan@atlas-sql-689457dc7202c347655ae5c3-hf3bmt.a.query.mongodb.net/myDB?ssl=true&authSource=admin';
+// TODO: 替换为你的 MongoDB 连接字符串
+// 格式: mongodb://username:password@host:port/database
+// 或 MongoDB Atlas: mongodb+srv://username:password@cluster.mongodb.net/database
+// 注意：用户名中的 @ 符号需要编码为 %40
+const MONGODB_URL = process.env.MONGODB_URL || 'YOUR_MONGODB_CONNECTION_URL_HERE';
 
-// 数据库名称（如果 URL 中已指定数据库，这里可以保持为空或使用 URL 中的数据库名）
-// 注意：你的 URL 中使用的是 'myDB'，如果需要使用 'spmart'，请修改 URL 中的数据库名
-const DB_NAME = 'myDB'; // 或 'spmart'，根据你的需求
+// 数据库名称
+const DB_NAME = process.env.DB_NAME || 'spmart';
 
 // ============================================
 // Mongoose Schema 定义

@@ -5,18 +5,22 @@
 const mongoose = require('mongoose');
 
 // 测试不同的用户名格式
+// TODO: 替换为你的实际 MongoDB 连接字符串
+const MONGODB_BASE_URL = process.env.MONGODB_URL || 'YOUR_MONGODB_CONNECTION_URL_HERE';
+const DB_NAME = process.env.DB_NAME || 'myDB';
+
 const testConfigs = [
     {
-        name: '格式 1: Zhangboyan@admin (完整格式)',
-        url: 'mongodb://Zhangboyan%40admin:Zhangboyan@atlas-sql-689457dc7202c347655ae5c3-hf3bmt.a.query.mongodb.net/myDB?ssl=true&authSource=admin'
+        name: '格式 1: username@admin (完整格式)',
+        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://username%40admin:password@your-cluster.mongodb.net/' + DB_NAME + '?ssl=true&authSource=admin')
     },
     {
-        name: '格式 2: Zhangboyan (仅用户名，authSource=admin)',
-        url: 'mongodb://Zhangboyan:Zhangboyan@atlas-sql-689457dc7202c347655ae5c3-hf3bmt.a.query.mongodb.net/myDB?ssl=true&authSource=admin'
+        name: '格式 2: username (仅用户名，authSource=admin)',
+        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://username:password@your-cluster.mongodb.net/' + DB_NAME + '?ssl=true&authSource=admin')
     },
     {
-        name: '格式 3: Zhangboyan (仅用户名，authSource=myDB)',
-        url: 'mongodb://Zhangboyan:Zhangboyan@atlas-sql-689457dc7202c347655ae5c3-hf3bmt.a.query.mongodb.net/myDB?ssl=true&authSource=myDB'
+        name: '格式 3: username (仅用户名，authSource=myDB)',
+        url: MONGODB_BASE_URL.replace('YOUR_MONGODB_CONNECTION_URL_HERE', 'mongodb://username:password@your-cluster.mongodb.net/' + DB_NAME + '?ssl=true&authSource=' + DB_NAME)
     }
 ];
 

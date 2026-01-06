@@ -24,9 +24,12 @@ app.use(express.json());
 // MongoDB 连接
 // ============================================
 // 从环境变量读取 MongoDB URL，如果没有则使用默认值
-// 注意：用户名中的 @ 符号已编码为 %40
-const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://Zhangboyan%40admin:Zhangboyan@atlas-sql-689457dc7202c347655ae5c3-hf3bmt.a.query.mongodb.net/myDB?ssl=true&authSource=admin';
-const DB_NAME = process.env.DB_NAME || 'myDB'; // 或 'spmart'，根据你的需求
+// TODO: 创建 .env 文件并设置 MONGODB_URL
+// 格式: mongodb://username:password@host:port/database
+// 或 MongoDB Atlas: mongodb+srv://username:password@cluster.mongodb.net/database
+// 注意：用户名中的 @ 符号需要编码为 %40
+const MONGODB_URL = process.env.MONGODB_URL || 'YOUR_MONGODB_CONNECTION_URL_HERE';
+const DB_NAME = process.env.DB_NAME || 'spmart';
 
 // 连接 MongoDB
 mongoose.connect(MONGODB_URL, {

@@ -6,9 +6,12 @@
 const mongoose = require('mongoose');
 
 // MongoDB 连接配置
-// 注意：用户名中的 @ 符号已编码为 %40
-const MONGODB_URL = 'mongodb://Zhangboyan%40admin:Zhangboyan@atlas-sql-689457dc7202c347655ae5c3-hf3bmt.a.query.mongodb.net/myDB?ssl=true&authSource=admin';
-const DB_NAME = 'myDB';
+// TODO: 替换为你的 MongoDB 连接字符串
+// 格式: mongodb://username:password@host:port/database
+// 或 MongoDB Atlas: mongodb+srv://username:password@cluster.mongodb.net/database
+// 注意：用户名中的 @ 符号需要编码为 %40
+const MONGODB_URL = process.env.MONGODB_URL || 'YOUR_MONGODB_CONNECTION_URL_HERE';
+const DB_NAME = process.env.DB_NAME || 'myDB';
 
 async function testConnection() {
     console.log('正在测试 MongoDB 连接...\n');
@@ -91,7 +94,8 @@ async function testConnection() {
         }
         
         console.error('\n💡 提示:');
-        console.error('- 当前使用的用户名: Zhangboyan@admin (URL 编码: Zhangboyan%40admin)');
+        console.error('- 检查你的 MongoDB 连接字符串格式');
+        console.error('- 如果用户名包含 @ 符号，需要编码为 %40');
         console.error('- 如果 IP 白名单未设置，这是最常见的失败原因');
         console.error('- 查看 MONGODB_SETUP.md 获取详细说明\n');
         
